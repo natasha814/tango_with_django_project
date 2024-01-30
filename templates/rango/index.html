@@ -16,7 +16,7 @@
         </div>
 
         <div>
-        <h2>Most Liked Categories</h2>
+            <h2>Most Liked Categories</h2>
         {% if categories %}
             <ul>
             {% for category in categories %}
@@ -31,11 +31,11 @@
         </div>
 
         <div>
-        <h2>Most Viewed Pages</h2>
+            <h2>Most Viewed Pages</h2>
         {% if pages %}
             <ul>
             {% for page in pages %}
-                <li>{{ page.name }}</li>
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
             {% endfor %}
             </ul>
         {% else %}
@@ -45,6 +45,8 @@
 
         <div>
             <a href="/rango/about/">About Rango</a><br />
+            <a href="/rango/add_category/">Add a New Category</a><br />
+            <a href="/rango/category/<category_name_slug>/add_page/">Add a New Page</a><br />
             <img src="{% static 'images/chameleon.jpg' %}"
                 alt="Picture of Rango" />
         </div>
