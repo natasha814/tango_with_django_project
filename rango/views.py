@@ -69,7 +69,9 @@ def add_category(request):
         # Have we been provided with a valid form?
         if form.is_valid():
             # Save the new category to the database.
-            form.save(commit=True)
+            cat = form.save(commit=True)
+            # shwoing the new category
+            print(cat, cat.slug)
             # Now that the category is saved, we could confirm this.
             # For now, just redirect the user back to the index view.
             return redirect('/rango/')
